@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <th>food</th>
+        <th>calorie</th>
+        <th>protein</th>
+        <th>carbohydrate</th>
+        <th>lipid</th>
+        <th>created_at</th>
+    </tr>
+    {% for nutrition in nutritions %}
+    <tr>
+        <th>{{ nutrition.food }}</th>
+        <th>{{ nutrition.calorie }}</th>
+        <th>{{ nutrition.protein }}</th>
+        <th>{{ nutrition.carbohydrate }}</th>
+        <th>{{ nutrition.lipid }}</th>
+        <th>{{ nutrition.created_at }}</th>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td><button><a href="{% url 'app3:create_nutrition' %}">create_nutrition</a></button></td>
+        <td><button><a href="{% url 'app2:index' %}">index</a></button></td>
+    </tr>
+</table>

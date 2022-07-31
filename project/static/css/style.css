@@ -1,0 +1,21 @@
+.background{
+    position: relative;
+}
+
+.start_frame{
+    border: solid 1px black;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(100%) translateX(-50%);
+    position: relative;
+}
+
+.start_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
