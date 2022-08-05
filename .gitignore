@@ -1,3 +1,4 @@
 project/manage.py
 project/db.sqlite3
 project/project/__init__.py
+secret_key.txt

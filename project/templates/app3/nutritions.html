@@ -1,5 +1,12 @@
 <table>
     <tr>
+        <th>合計値：</th>
+        <th>{{ sum_calorie }}</th>
+        <th>{{ sum_protein }}</th>
+        <th>{{ sum_carbohydrate }}</th>
+        <th>{{ sum_lipid }}</th>
+    </tr>
+    <tr>
         <th>food</th>
         <th>calorie</th>
         <th>protein</th>
@@ -15,6 +22,8 @@
         <th>{{ nutrition.carbohydrate }}</th>
         <th>{{ nutrition.lipid }}</th>
         <th>{{ nutrition.created_at }}</th>
+        <th><th><a href="{% url 'app3:update_nutrition' nutrition.id %}">Update</a></th></th>
+        <th><th><a href="{% url 'app3:delete_nutrition' nutrition.id %}">Delete</a></th></th>
     </tr>
     {% endfor %}
     <tr>

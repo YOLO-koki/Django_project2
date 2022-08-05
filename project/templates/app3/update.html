@@ -1,0 +1,38 @@
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <thead>
+            <tr>
+                <td><h1>Update of Nutrition</h1></td>
+            </tr>
+        </thead>
+        {% with form as f %}
+        <tbody>
+            <tr>
+                <td>{{ f.food.label }}</td>
+                <td>{{ f.food }}</td>
+            </tr>
+            <tr>
+                <td>{{ f.calorie.label }}</td>
+                <td>{{ f.calorie }}</td>
+            </tr>
+            <tr>
+                <td>{{ f.protein.label }}</td>
+                <td>{{ f.protein }}</td>
+            </tr>
+            <tr>
+                <td>{{ f.carbohydrate.label }}</td>
+                <td>{{ f.carbohydrate }}</td>
+            </tr>
+            <tr>
+                <td>{{ f.lipid.label }}</td>
+                <td>{{ f.lipid }}</td>
+            </tr>
+            <tr>
+                <td><button><a href="{% url 'app3:nutrition' %}">nutrition</a></button></td>
+                <td><input type="submit" value="save"></td>
+            </tr>
+        </tbody>
+        {% endwith %}
+    </table>
+</form>

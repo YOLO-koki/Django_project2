@@ -1,0 +1,23 @@
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>food</th>
+            <th>calorie</th>
+            <th>protein</th>
+            <th>carbohydrate</th>
+            <th>lipid</th>
+            <th>created_at</th>
+        </tr>
+        <tr>
+            <th>{{ nutritions.food }}</th>
+            <th>{{ nutritions.calorie }}</th>
+            <th>{{ nutritions.protein }}</th>
+            <th>{{ nutritions.carbohydrate }}</th>
+            <th>{{ nutritions.lipid }}</th>
+            <th>{{ nutritions.created_at }}</th>
+        </tr>
+    </table>
+    <input type="submit" value="delete!">
+    <a href="{% url 'app3:nutrition' %}">back</a>
+</form>
