@@ -1,26 +1,41 @@
-<table>
-    <tr>
-        <th>height</th>
-        <th>weight</th>
-        <th>fat</th>
-        <th>waist</th>
-        <th>created_at</th>
-    </tr>
-    {% for condition in conditions %}
-    <tr>
-        <th>{{ condition.height }}</th>
-        <th>{{ condition.weight }}</th>
-        <th>{{ condition.fat }}</th>
-        <th>{{ condition.waist }}</th>
-        <th>{{ condition.created_at }}</th>
-        <th><a href="{% url 'app2:update_condition' condition.id %}">Update</a></th>
-        <th><a href="{% url 'app2:delete_condition' condition.id %}">Delete</a></th>
-    </tr>
-    {% endfor %}
-    <a href="{% url 'app2:create_condition' %}">forms</a>
-</table>
+{% extends '../layouts/base2.html' %}
 
-<p><a href="{% url 'app3:nutrition' %}">nutrition</a></p>
-<div class="graph">
-    <img src="{% url 'app2:plot' %}" width=1200 height=1200>
+{% block title %}
+Conditions
+{% endblock title %}
+
+{% block contents %}
+<div class="tabel">
+    <table>
+        <tr class="column_names">
+            <th>height</th>
+            <th>weight</th>
+            <th>fat</th>
+            <th>waist</th>
+            <th>created_at</th>
+            <th>編集</th>
+            <th>削除</th>
+        </tr>
+        {% for condition in conditions %}
+        <tr>
+            <th>{{ condition.height }}</th>
+            <th>{{ condition.weight }}</th>
+            <th>{{ condition.fat }}</th>
+            <th>{{ condition.waist }}</th>
+            <th>{{ condition.created_at }}</th>
+            <th><button><a href="{% url 'app2:update_condition' condition.id %}">Update</a></button></th>
+            <th><button><a href="{% url 'app2:delete_condition' condition.id %}">Delete</a></button></th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th><button><a href="{% url 'app2:create_condition' %}">今日のコンディションの入力</a></button></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th><button><a href="{% url 'app3:nutrition' %}">食事の詳細</a></button></th>
+            <th><button><a href="{% url 'app2:graph' %}">グラフの表示</a></button></th>
+        </tr>
+    </table>
 </div>
+{% endblock contents %}

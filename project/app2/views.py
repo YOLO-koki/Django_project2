@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, TemplateView
 from .forms import ConditionForm
 from .models import Condition
 from django.urls import reverse_lazy
@@ -38,6 +38,9 @@ class IndexView(ListView):
     model = Condition
     context_object_name = 'conditions'
     paginate_by: int = 30
+
+class ConditionGraphView(TemplateView):
+    template_name = "app2/graph.html"
     
 def getPlot(request):
     setPlt()

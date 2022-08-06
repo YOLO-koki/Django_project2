@@ -1,21 +1,36 @@
-<form method="post">
+{% extends '../layouts/base2.html' %}
+
+{% block title %}
+Delete Condition
+{% endblock title %}
+
+{% block contents %}
+<div class="table">
+    <form method="post">
     {% csrf_token %}
-    <table>
-        <tr>
-            <th>height</th>
-            <th>weight</th>
-            <th>fat</th>
-            <th>waist</th>
-            <th>created_at</th>
-        </tr>
-        <tr>
-            <th>{{ condition.height }}</th>
-            <th>{{ condition.weight }}</th>
-            <th>{{ condition.fat }}</th>
-            <th>{{ condition.waist }}</th>
-            <th>{{ condition.created_at }}</th>
-        </tr>
-    </table>
-    <input type="submit" value="delete!">
-    <a href="{% url 'app2:index' %}">back</a>
-</form>
+        <table>
+            <tr class="column_names">
+                <th>height</th>
+                <th>weight</th>
+                <th>fat</th>
+                <th>waist</th>
+                <th>created_at</th>
+            </tr>
+            <tr>
+                <th>{{ condition.height }}</th>
+                <th>{{ condition.weight }}</th>
+                <th>{{ condition.fat }}</th>
+                <th>{{ condition.waist }}</th>
+                <th>{{ condition.created_at }}</th>
+            </tr>
+            <tr>
+                <th><button><a href="{% url 'app2:index' %}">戻る</a></button></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><input type="submit" value="delete!"></th>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock contents %}

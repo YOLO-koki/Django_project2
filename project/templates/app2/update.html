@@ -5,38 +5,40 @@ Today's Condition
 {% endblock title %}
 
 {% block contents %}
-<form method="post">
+<div class="table">
+    <form method="post">
     {% csrf_token %}
-    <table>
-        <thead>
-            <tr>
-                <td><h1>Update of Condition</h1></td>
-            </tr>
-        </thead>
-        {% with form as f %}
-        <tbody>
-            <tr>
-                <td>{{ f.height.label }}</td>
-                <td>{{ f.height }}</td>
-            </tr>
-            <tr>
-                <td>{{ f.weight.label }}</td>
-                <td>{{ f.weight }}</td>
-            </tr>
-            <tr>
-                <td>{{ f.fat.label }}</td>
-                <td>{{ f.fat }}</td>
-            </tr>
-            <tr>
-                <td>{{ f.waist.label }}</td>
-                <td>{{ f.waist }}</td>
-            </tr>
-            <tr>
-                <td><button><a href="{% url 'app2:index' %}">index</a></button></td>
-                <td><input type="submit" value="save"></td>
-            </tr>
-        </tbody>
-        {% endwith %}
-    </table>
-</form>
+        <table>
+            <thead>
+                <tr>
+                    <td><h1>Update of Condition</h1></td>
+                </tr>
+            </thead>
+            {% with form as f %}
+            <tbody>
+                <tr>
+                    <td>{{ f.height.label }}</td>
+                    <td>{{ f.height }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.weight.label }}</td>
+                    <td>{{ f.weight }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.fat.label }}</td>
+                    <td>{{ f.fat }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.waist.label }}</td>
+                    <td>{{ f.waist }}</td>
+                </tr>
+                <tr>
+                    <td><button><a href="{% url 'app2:index' %}">戻る</a></button></td>
+                    <td><input type="submit" value="保存"></td>
+                </tr>
+            </tbody>
+            {% endwith %}
+        </table>
+    </form>
+</div>
 {% endblock contents %}

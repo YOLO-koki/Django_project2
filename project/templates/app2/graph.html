@@ -1,0 +1,12 @@
+{% extends '../layouts/base2.html' %}
+
+{% block title %}
+Graph of Conditions
+{% endblock title %}
+
+{% block contents %}
+<div class="graph">
+    <img src="{% url 'app2:plot' %}" width=1200 height=1200>
+</div>
+<button><a href="{% url 'app2:index' %}">戻る</a></button>
+{% endblock contents %}

@@ -1,33 +1,47 @@
-<table>
-    <tr>
-        <th>合計値：</th>
-        <th>{{ sum_calorie }}</th>
-        <th>{{ sum_protein }}</th>
-        <th>{{ sum_carbohydrate }}</th>
-        <th>{{ sum_lipid }}</th>
-    </tr>
-    <tr>
-        <th>food</th>
-        <th>calorie</th>
-        <th>protein</th>
-        <th>carbohydrate</th>
-        <th>lipid</th>
-        <th>created_at</th>
-    </tr>
-    {% for nutrition in nutritions %}
-    <tr>
-        <th>{{ nutrition.food }}</th>
-        <th>{{ nutrition.calorie }}</th>
-        <th>{{ nutrition.protein }}</th>
-        <th>{{ nutrition.carbohydrate }}</th>
-        <th>{{ nutrition.lipid }}</th>
-        <th>{{ nutrition.created_at }}</th>
-        <th><th><a href="{% url 'app3:update_nutrition' nutrition.id %}">Update</a></th></th>
-        <th><th><a href="{% url 'app3:delete_nutrition' nutrition.id %}">Delete</a></th></th>
-    </tr>
-    {% endfor %}
-    <tr>
-        <td><button><a href="{% url 'app3:create_nutrition' %}">create_nutrition</a></button></td>
-        <td><button><a href="{% url 'app2:index' %}">index</a></button></td>
-    </tr>
-</table>
+{% extends '../layouts/base3.html' %}
+
+{% block title %}
+Today's Nutrition
+{% endblock title %}
+
+{% block contents %}
+<div class="table">
+    <table>
+        <tr class="column_names">
+            <th>food</th>
+            <th>calorie</th>
+            <th>protein</th>
+            <th>carbohydrate</th>
+            <th>lipid</th>
+            <th>created_at</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+        
+        <tr>
+            <th>合計値：</th>
+            <th>{{ sum_calorie }}</th>
+            <th>{{ sum_protein }}</th>
+            <th>{{ sum_carbohydrate }}</th>
+            <th>{{ sum_lipid }}</th>
+        </tr>
+        
+        {% for nutrition in nutritions %}
+        <tr>
+            <th>{{ nutrition.food }}</th>
+            <th>{{ nutrition.calorie }}</th>
+            <th>{{ nutrition.protein }}</th>
+            <th>{{ nutrition.carbohydrate }}</th>
+            <th>{{ nutrition.lipid }}</th>
+            <th>{{ nutrition.created_at }}</th>
+            <th><button><a href="{% url 'app3:update_nutrition' nutrition.id %}">編集</a></button></th>
+            <th><button><a href="{% url 'app3:delete_nutrition' nutrition.id %}">削除</a></button></th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td><button><a href="{% url 'app3:create_nutrition' %}">食事詳細入力</a></button></td>
+            <td><button><a href="{% url 'app2:index' %}">戻る</a></button></td>
+        </tr>
+    </table>
+</div>
+{% endblock contents %}
