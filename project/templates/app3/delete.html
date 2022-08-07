@@ -25,9 +25,16 @@ Delete page
                 <th>{{ nutritions.lipid }}</th>
                 <th>{{ nutritions.created_at }}</th>
             </tr>
+            <tr>
+                <th><input type="submit" value="delete!"></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><button><a href="{% url 'app3:nutrition' %}">戻る</a></button></th>
+            </tr>
         </table>
-        <input type="submit" value="delete!">
-        <a href="{% url 'app3:nutrition' %}">戻る</a>
+        
     </form>
 </div>
 {% endblock contents %}

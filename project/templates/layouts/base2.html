@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    {% include '../layouts/_navbar.html' %}
+    <div class="main">
     {% block contents %}
     コンテンツがありません
     {% endblock contents %}
+    </div>
 </body>
 </html>

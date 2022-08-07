@@ -11,33 +11,34 @@ Today's Nutrition
         <table>
             <thead>
                 <tr>
-                    <td><h1>今日の栄養摂取</h1></td>
+                    <td class="label">今日の栄養摂取</td>
+                    <td></td>
                 </tr>
             </thead>
             {% with form as f %}
             <tbody>
                 <tr>
-                    <td>{{ f.food.label }}</td>
+                    <td class="label">{{ f.food.label }}</td>
                     <td>{{ f.food }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.calorie.label }}</td>
+                    <td class="label">{{ f.calorie.label }}</td>
                     <td>{{ f.calorie }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.protein.label }}</td>
+                    <td class="label">{{ f.protein.label }}</td>
                     <td>{{ f.protein }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.carbohydrate.label }}</td>
+                    <td class="label">{{ f.carbohydrate.label }}</td>
                     <td>{{ f.carbohydrate }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.lipid.label }}</td>
+                    <td class="label">{{ f.lipid.label }}</td>
                     <td>{{ f.lipid }}</td>
                 </tr>
                 <tr>
-                    <td><button><a href="{% url 'app3:nutrition' %}">戻る</a></button></td>
+                    <td></td>
                     <td><input type="submit" value="保存"></td>
                 </tr>
             </tbody>

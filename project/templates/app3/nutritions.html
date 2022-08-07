@@ -18,30 +18,29 @@ Today's Nutrition
             <th>delete</th>
         </tr>
         
-        <tr>
-            <th>合計値：</th>
-            <th>{{ sum_calorie }}</th>
-            <th>{{ sum_protein }}</th>
-            <th>{{ sum_carbohydrate }}</th>
-            <th>{{ sum_lipid }}</th>
+        <tr class="sum">
+            <td>合計値：</td>
+            <td>{{ sum_calorie }}</td>
+            <td>{{ sum_protein }}</td>
+            <td>{{ sum_carbohydrate }}</td>
+            <td>{{ sum_lipid }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         
         {% for nutrition in nutritions %}
         <tr>
-            <th>{{ nutrition.food }}</th>
-            <th>{{ nutrition.calorie }}</th>
-            <th>{{ nutrition.protein }}</th>
-            <th>{{ nutrition.carbohydrate }}</th>
-            <th>{{ nutrition.lipid }}</th>
-            <th>{{ nutrition.created_at }}</th>
-            <th><button><a href="{% url 'app3:update_nutrition' nutrition.id %}">編集</a></button></th>
-            <th><button><a href="{% url 'app3:delete_nutrition' nutrition.id %}">削除</a></button></th>
+            <td>{{ nutrition.food }}</td>
+            <td>{{ nutrition.calorie }}</td>
+            <td>{{ nutrition.protein }}</td>
+            <td>{{ nutrition.carbohydrate }}</td>
+            <td>{{ nutrition.lipid }}</td>
+            <td>{{ nutrition.created_at }}</td>
+            <td><button><a href="{% url 'app3:update_nutrition' nutrition.id %}">編集</a></button></td>
+            <td><button><a href="{% url 'app3:delete_nutrition' nutrition.id %}">削除</a></button></td>
         </tr>
         {% endfor %}
-        <tr>
-            <td><button><a href="{% url 'app3:create_nutrition' %}">食事詳細入力</a></button></td>
-            <td><button><a href="{% url 'app2:index' %}">戻る</a></button></td>
-        </tr>
     </table>
 </div>
 {% endblock contents %}

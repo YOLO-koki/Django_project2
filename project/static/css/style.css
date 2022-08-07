@@ -1,3 +1,82 @@
+/* 共有 */
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("http://source.unsplash.com/random/");
+    background-size: cover;
+}
+
+button{
+    width: 100%;
+}
+
+.graph{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    /* border: solid 1px black; */
+    width: 100%;
+    /* height: 100%; */
+}
+
+table{
+    width: 1000px;
+    margin: 0 auto;
+    /* border: solid 3px black; */
+    text-align: center;
+}
+
+.label{
+    width: 20%;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(197, 197, 197);
+}
+
+tr:nth-child(even){
+    background-color: rgb(250, 250, 250);
+}
+
+tr.column_names{
+    background-color: rgb(96, 125, 255);
+}
+
+.navbar{
+    display: block;
+    text-align: center;
+    background-color: rgb(79, 128, 200);
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.a_nav{
+    text-align: center;
+    display: flex;
+    position: absolute;
+    transform: translateX(50%) translateY(50%);
+}
+
+.nav_element{
+    text-decoration: none;
+    color: beige;
+    font-weight: bold;
+    display: block;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.nav_element:hover{
+    background-color: rgb(77, 163, 206);
+    color: rgb(0, 0, 0);
+}
+
 /* app1 */
 .background{
     position: relative;
@@ -22,22 +101,16 @@
 }
 
 /* app2 */
-table, tr, th, thead, tbody{
-    border: solid 1px black;
+#id_height, #id_weight, #id_fat, #id_waist{
+    width: 90%;
 }
 
-img{
-    display: block;
-    margin: 0 auto;
-}
-
-table{
-
-    margin: 0 auto;
-}
-
-tr:nth-child(odd){
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
 /* app3 */
+tr.sum{
+    background-color: aquamarine;
+    font-weight: bold;
+}
+
+#id_food, #id_calorie, #id_protein, #id_carbohydrate, #id_lipid{
+    width: 90%;
+}

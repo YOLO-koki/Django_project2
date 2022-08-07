@@ -15,7 +15,7 @@ class NutritionsForm(forms.ModelForm):
             'carbohydrate': forms.NumberInput(),
             'lipid': forms.NumberInput(),
         }
-        label = {
+        labels = {
             'food': '食品',
             'calorie': 'カロリー',
             'protein': 'タンパク質',

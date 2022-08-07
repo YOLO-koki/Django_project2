@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
+SECRET_KEY = 'django-insecure-+6hi10f*gk$ss^mb*pq9vuykl57u=q6*fzmsqh$ch#m_aq71tw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,10 +76,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # ログインURLの設定
 LOGIN_URL = '/account/login/'
 # ログイン後のリダイレクト先のURL
-# LOGIN_REDIRECT_URL = '/index/'
 LOGIN_REDIRECT_URL = 'app2:create_condition'
 # ログアウト後のリダイレクト先のURL
 ACCOUNT_LOGOUT_REDIRECT_URL = '/account/login/'
+# 即時ログアウト設定
+# ACCOUNT_LOGOUT_ON_GET = True
 ###########################################################
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

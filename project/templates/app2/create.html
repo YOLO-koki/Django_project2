@@ -11,29 +11,29 @@ Today's Condition
         <table>
             <thead>
                 <tr>
-                    <td><h1>今日のコンディションは？</h1></td>
+                    <td class="label">今日のコンディションは？</td>
                 </tr>
             </thead>
             {% with form as f %}
             <tbody>
                 <tr>
-                    <td>{{ f.height.label }}</td>
+                    <td class="label">{{ f.height.label }}</td>
                     <td>{{ f.height }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.weight.label }}</td>
+                    <td class="label">{{ f.weight.label }}</td>
                     <td>{{ f.weight }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.fat.label }}</td>
+                    <td class="label">{{ f.fat.label }}</td>
                     <td>{{ f.fat }}</td>
                 </tr>
                 <tr>
-                    <td>{{ f.waist.label }}</td>
+                    <td class="label">{{ f.waist.label }}</td>
                     <td>{{ f.waist }}</td>
                 </tr>
                 <tr>
-                    <td><button><a href="{% url 'app2:index' %}">戻る</a></button></td>
+                    <td></td>
                     <td><input type="submit" value="保存"></td>
                 </tr>
             </tbody>

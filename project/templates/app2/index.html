@@ -13,29 +13,20 @@ Conditions
             <th>fat</th>
             <th>waist</th>
             <th>created_at</th>
-            <th>編集</th>
-            <th>削除</th>
+            <th>update</th>
+            <th>delete</th>
         </tr>
         {% for condition in conditions %}
         <tr>
-            <th>{{ condition.height }}</th>
-            <th>{{ condition.weight }}</th>
-            <th>{{ condition.fat }}</th>
-            <th>{{ condition.waist }}</th>
-            <th>{{ condition.created_at }}</th>
-            <th><button><a href="{% url 'app2:update_condition' condition.id %}">Update</a></button></th>
-            <th><button><a href="{% url 'app2:delete_condition' condition.id %}">Delete</a></button></th>
+            <td>{{ condition.height }}</td>
+            <td>{{ condition.weight }}</td>
+            <td>{{ condition.fat }}</td>
+            <td>{{ condition.waist }}</td>
+            <td>{{ condition.created_at }}</td>
+            <td><button><a href="{% url 'app2:update_condition' condition.id %}">編集</a></button></td>
+            <td><button><a href="{% url 'app2:delete_condition' condition.id %}">削除</a></button></td>
         </tr>
         {% endfor %}
-        <tr>
-            <th><button><a href="{% url 'app2:create_condition' %}">今日のコンディションの入力</a></button></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th><button><a href="{% url 'app3:nutrition' %}">食事の詳細</a></button></th>
-            <th><button><a href="{% url 'app2:graph' %}">グラフの表示</a></button></th>
-        </tr>
     </table>
 </div>
 {% endblock contents %}
