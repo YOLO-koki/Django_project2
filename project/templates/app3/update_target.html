@@ -1,0 +1,49 @@
+{% extends '../layouts/base3.html' %}
+
+{% block title %}
+Nutrition Update
+{% endblock title %}
+
+{% block contents %}
+
+<div class="table">
+    <form method="post">
+    {% csrf_token %}
+        <table>
+            <thead>
+                <tr>
+                    <td><h1>Update of Nutrition</h1></td>
+                </tr>
+            </thead>
+            {% with form as f %}
+            <tbody>
+                <tr>
+                    <td>{{ f.target_food.label }}</td>
+                    <td>{{ f.target_food }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.target_calorie.label }}</td>
+                    <td>{{ f.target_calorie }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.target_protein.label }}</td>
+                    <td>{{ f.target_protein }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.target_carbohydrate.label }}</td>
+                    <td>{{ f.target_carbohydrate }}</td>
+                </tr>
+                <tr>
+                    <td>{{ f.target_lipid.label }}</td>
+                    <td>{{ f.target_lipid }}</td>
+                </tr>
+                <tr>
+                    <td><button><a href="{% url 'app3:nutrition' %}">戻る</a></button></td>
+                    <td><input type="submit" value="保存"></td>
+                </tr>
+            </tbody>
+            {% endwith %}
+        </table>
+    </form>
+</div>
+{% endblock contents %}

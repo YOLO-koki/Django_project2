@@ -1,16 +1,22 @@
+from audioop import reverse
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
-from .models import Nutritions
-from .forms import NutritionsForm
+from .models import Nutritions, Target
+from .forms import NutritionsForm, TargetForm
 from django.urls import reverse_lazy
 
 # Create your views here.
 class Nutrition(TemplateView):
     template_name: str = 'app3/nutritions.html'
     
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # 入力値の取得
         context["nutritions"] = Nutritions.objects.all()
+        context["target_id"] = Target.objects.values_list('id')[len(Target.objects.values_list('id'))-1][0]
+        
+        # 各値の合計値
         sum_calorie = []
         sum_protein = []
         sum_carbohydrate = []
@@ -24,8 +30,21 @@ class Nutrition(TemplateView):
         context["sum_protein"] = sum(sum_protein)
         context["sum_carbohydrate"] = sum(sum_carbohydrate)
         context["sum_lipid"] = sum(sum_lipid)
+        
+        # 目標の取得(データの一番後ろのデータを取得) ※更新しているわけではない
+        context["target_calorie"] = Target.objects.values_list('target_calorie')[len(Target.objects.values_list('target_calorie'))-1][0]
+        context["target_protein"] = Target.objects.values_list('target_protein')[len(Target.objects.values_list('target_protein'))-1][0]
+        context["target_carbohydrate"] = Target.objects.values_list('target_carbohydrate')[len(Target.objects.values_list('target_carbohydrate'))-1][0]
+        context["target_lipid"] = Target.objects.values_list('target_lipid')[len(Target.objects.values_list('target_lipid'))-1][0]
+        
+        # 目標値と入力値の差
+        context["sub_calorie"] =  context["sum_calorie"] - context["target_calorie"]
+        context["sub_protein"] =  context["sum_protein"] - context["target_protein"]
+        context["sub_carbohydrate"] = context["sum_carbohydrate"] - context["target_carbohydrate"]
+        context["sub_lipid"] = context["sum_lipid"] - context["target_lipid"]
+        
         return context
-    
+
 
 class NutritionsCreateView(CreateView):
     model = Nutritions
@@ -43,3 +62,17 @@ class NutritionsDeleteView(DeleteView):
     model = Nutritions
     template_name = "app3/delete.html"
     success_url = reverse_lazy('app3:nutrition')
+
+# 目標値 設定
+class TargetCreateView(CreateView):
+    model = Target
+    form_class = TargetForm
+    template_name = "app3/create_target.html"
+    success_url = reverse_lazy('app3:nutrition')
+    
+class TargetUpdateView(UpdateView):
+    model = Target
+    template_name = "app3/update_target.html"
+    fields = ['target_calorie', 'target_protein', 'target_carbohydrate', 'target_lipid']
+    success_url = reverse_lazy('app3:nutrition')
+

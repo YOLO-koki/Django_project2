@@ -9,3 +9,9 @@ class Nutritions(models.Model):
     carbohydrate = models.FloatField(blank=False, null=False)
     lipid = models.FloatField(blank=False, null=False)
     created_at = models.DateTimeField(default=timezone.now)
+
+class Target(models.Model):
+    target_calorie = models.IntegerField(blank=False, null=False)
+    target_protein = models.FloatField(blank=False, null=False)
+    target_carbohydrate = models.FloatField(blank=False, null=False)
+    target_lipid = models.FloatField(blank=False, null=False)

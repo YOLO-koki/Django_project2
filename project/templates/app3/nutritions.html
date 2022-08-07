@@ -8,22 +8,44 @@ Today's Nutrition
 <div class="table">
     <table>
         <tr class="column_names">
-            <th>food</th>
-            <th>calorie</th>
-            <th>protein</th>
-            <th>carbohydrate</th>
-            <th>lipid</th>
-            <th>created_at</th>
+            <th>食品</th>
+            <th>カロリー</th>
+            <th>タンパク質</th>
+            <th>炭水化物</th>
+            <th>脂質</th>
+            <th>作成日</th>
             <th>update</th>
             <th>delete</th>
         </tr>
+
+        <tr class="target">
+            <td>目標値</td>
+            <td>{{ target_calorie }}</td>
+            <td>{{ target_protein }}</td>
+            <td>{{ target_carbohydrate }}</td>
+            <td>{{ target_lipid }}</td>
+            <td></td>
+            <td><button><a href="{% url 'app3:update_target' target_id %}">編集</a></button></td>
+            <td></td>
+        </tr>
         
         <tr class="sum">
-            <td>合計値：</td>
+            <td>合計値</td>
             <td>{{ sum_calorie }}</td>
             <td>{{ sum_protein }}</td>
             <td>{{ sum_carbohydrate }}</td>
             <td>{{ sum_lipid }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr class="result">
+            <td>結果</td>
+            <td>{{ sub_calorie }}</td>
+            <td>{{ sub_protein }}</td>
+            <td>{{ sub_carbohydrate }}</td>
+            <td>{{ sub_lipid }}</td>
             <td></td>
             <td></td>
             <td></td>

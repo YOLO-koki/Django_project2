@@ -5,6 +5,7 @@
         <a href="{% url 'app2:create_condition' %}" class="nav_element">コンディションの入力</a>
         <a href="{% url 'app3:nutrition' %}" class="nav_element">食事の詳細</a>
         <a href="{% url 'app3:create_nutrition' %}" class="nav_element">食事詳細入力</a>
-        <a href="/account/logout" class="nav_element">ログアウト</a>
+        <a href="{% url 'app3:create_target' %}" class="nav_element">目標摂取カロリー入力</a>
+        <a href="/account/logout" class="nav_element"><font color="red">ログアウト</font></a>
     </div>
 </div>

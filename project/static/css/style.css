@@ -60,7 +60,7 @@ tr.column_names{
     text-align: center;
     display: flex;
     position: absolute;
-    transform: translateX(50%) translateY(50%);
+    transform: translateX(30%) translateY(50%);
 }
 
 .nav_element{
@@ -111,6 +111,20 @@ tr.sum{
     font-weight: bold;
 }
 
+tr.target{
+    background-color: yellow;
+    font-weight: bold;
+}
+
+tr.result{
+    background-color: pink;
+    font-weight: bold;
+}
+
 #id_food, #id_calorie, #id_protein, #id_carbohydrate, #id_lipid{
+    width: 90%;
+}
+
+#id_target_calorie, #id_target_protein, #id_target_carbohydrate, #id_target_lipid{
     width: 90%;
 }
