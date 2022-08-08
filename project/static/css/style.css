@@ -72,9 +72,29 @@ tr.column_names{
     margin-left: 10px;
 }
 
+a.nav_element:active{
+    color: aquamarine;
+}
+
 .nav_element:hover{
     background-color: rgb(77, 163, 206);
     color: rgb(0, 0, 0);
+}
+
+.current{
+    color: rgb(248, 192, 115);
+    background-color: azure;
+}
+
+a{
+    text-decoration: none;
+}
+
+#reset{
+    width: 9.6%;
+    margin-left: 75%;
+    background: red;
+    font-weight: bold;
 }
 
 /* app1 */

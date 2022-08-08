@@ -1,3 +1,4 @@
+from time import clock_settime
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, TemplateView
@@ -41,6 +42,11 @@ class IndexView(ListView):
 
 class ConditionGraphView(TemplateView):
     template_name = "app2/graph.html"
+    
+# class ResetView(DeleteView):
+#     model = Condition
+#     template_name: str = 'app2/reset.html'
+#     success_url = reverse_lazy('app2:index.html')
     
 def getPlot(request):
     setPlt()

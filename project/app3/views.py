@@ -1,4 +1,3 @@
-from audioop import reverse
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
 from .models import Nutritions, Target
@@ -8,7 +7,6 @@ from django.urls import reverse_lazy
 # Create your views here.
 class Nutrition(TemplateView):
     template_name: str = 'app3/nutritions.html'
-    
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
