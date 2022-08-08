@@ -20,7 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app1.urls')),
     path('', include('app2.urls')),
-    path('nutrition/', include('app3.urls')),
+    path('', include('app3.urls')),
     
     # allauth アプリが持つビューを url と紐付け
     path('account/', include('allauth.urls')),

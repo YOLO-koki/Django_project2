@@ -28,6 +28,6 @@ Conditions
         </tr>
         {% endfor %}
     </table>
-    <button id="reset"><a href="">リセット</a></button>
+    <button id="reset"><a href="{% url 'app2:reset_condition' %}">リセット</a></button>
 </div>
 {% endblock contents %}

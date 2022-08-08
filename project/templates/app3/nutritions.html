@@ -25,7 +25,11 @@ Today's Nutrition
             <td>{{ target_carbohydrate }}</td>
             <td>{{ target_lipid }}</td>
             <td></td>
+            {% if target_id %}
             <td><button><a href="{% url 'app3:update_target' target_id %}">編集</a></button></td>
+            {% else %}
+            <td></td>
+            {% endif %}
             <td></td>
         </tr>
         
@@ -51,6 +55,7 @@ Today's Nutrition
             <td></td>
         </tr>
         
+
         {% for nutrition in nutritions %}
         <tr>
             <td>{{ nutrition.food }}</td>
@@ -64,6 +69,6 @@ Today's Nutrition
         </tr>
         {% endfor %}
     </table>
-    <button id="reset"><a href="">リセット</a></button>
+    <button id="reset"><a href="{% url 'app3:reset_nutrition' %}">リセット</a></button>
 </div>
 {% endblock contents %}
