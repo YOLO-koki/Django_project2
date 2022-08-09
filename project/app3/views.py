@@ -136,4 +136,22 @@ class TargetUpdateView(UpdateView):
 def reset(request):
     Target.objects.all().delete()
     Nutritions.objects.all().delete()
-    return render(request, 'app3/nutritions.html')
+    context = {}
+    context["sum_calorie"] = 0
+    context["sum_protein"] = 0
+    context["sum_carbohydrate"] = 0
+    context["sum_lipid"] = 0
+    
+    # 目標の取得(データの一番後ろのデータを取得) ※更新しているわけではない
+    context["target_calorie"] = 0
+    context["target_protein"] = 0
+    context["target_carbohydrate"] = 0
+    context["target_lipid"] = 0
+    
+    # 目標値と入力値の差
+    context["sub_calorie"] =  0
+    context["sub_protein"] =  0
+    context["sub_carbohydrate"] = 0
+    context["sub_lipid"] = 0
+    
+    return render(request, 'app3/nutritions.html', context)
